@@ -145,6 +145,7 @@ export async function fetchInvoicesPages(query: string) {
 }
 
 export async function fetchInvoiceById(id: string) {
+  // noStore();
   try {
     const data = await sql<InvoiceForm>`
       SELECT
@@ -220,8 +221,8 @@ export async function fetchFilteredCustomers(query: string) {
   }
 }
 
-export async function fetchInvoiceCount() {
-  const invoiceCountPromise = sql`SELECT COUNT(*) FROM invoices`;
-}
+// export async function fetchInvoiceCount() {
+//   const invoiceCountPromise = sql`SELECT COUNT(*) FROM invoices`;
+// }
 
 export const customerCountPromise = sql`SELECT COUNT(*) FROM customers`;
